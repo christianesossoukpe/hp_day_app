@@ -1,8 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import { ref, onMounted } from 'vue';
-import lottie from 'lottie-web';
+import { ref } from 'vue';
 // État pour gérer l'ouverture/fermeture de l'aside
 const isAsideOpen = ref(false);
 
@@ -26,19 +25,6 @@ const sendEmail = () => {
 const changeTheme = () => {
     document.body.className = selectedTheme.value;
 };
-
-// Initialiser l'animation Lottie
-onMounted(() => {
-    upcomingBirthdays.value.forEach(friend => {
-        lottie.loadAnimation({
-            container: document.querySelector(`.lottie-animation:nth-of-type(${friend.id})`),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '/animations/Animation - 1731319237400.json' // Remplacez par le chemin de votre fichier JSON
-        });
-    });
-});
 </script>
 
 <template>
@@ -59,7 +45,7 @@ onMounted(() => {
                     Mes Amis
                 </a>
                 <a href="/notifications" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
-                    Notifications  <!-- Animation Lottie -->
+                    Notifications
                 </a>
             </div>
         </template>
@@ -110,7 +96,7 @@ onMounted(() => {
                             </a>
                         </li>
                         <li>
-                            <a href="/ajoutdesamis"
+                            <a href="#"
                                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -136,6 +122,8 @@ onMounted(() => {
 
                     </ul>
                     <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
+
+
 
                         <li>
                             <a href="#"
@@ -178,12 +166,12 @@ onMounted(() => {
             </aside>
 
             <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-md p-6">
-                <h1 class="text-3xl font-bold mb-4 text-center" style="font-family: 'Charme', sans-serif;">🎉 Bienvenue dans votre Tableau de Bord d'Anniversaire !
+                <h1 class="text-3xl font-bold mb-4 text-center" style="font-family: 'Charme', sans-serif;">🎉 
                     🎉</h1>
 
                 <!-- Section des anniversaires  du jour -->
                 <div class="mb-6">
-                    <h2 class="text-2xl font-semibold mb-2">Anniversaires du jour</h2>
+                    <h2 class="text-2xl font-semibold mb-2"></h2>
                     <div class="flex gap-4 justify">
                         <div v-for="friend in upcomingBirthdays" :key="friend.id"
                             class="w-[200px] pt-0 max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -218,8 +206,6 @@ onMounted(() => {
                                     </ul>
                                 </div>
                             </div>
-
-               
                             <div class="flex flex-col items-center p-4">
                                 <img class="w-20 h-20 mb-3 rounded-full shadow-lg"
                                     src="/docs/images/people/profile-picture-3.jpg"
@@ -229,7 +215,7 @@ onMounted(() => {
                                 <span class="text-sm text-gray-500 dark:text-gray-400">{{ friend.birthday }}</span>
                                 <div class="flex mt-4 md:mt-6">
                                     <button
-                                        class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Souhaiter</button>
+                                        class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Ajouter</button>
                                 </div>
                             </div>
                         </div>
@@ -238,7 +224,7 @@ onMounted(() => {
 
                 <!-- Souhaiter un bon anniversaire -->
                 <div class="text-center mt-8">
-                    <h2 class="text-xl font-semibold" style="font-family: 'Charme', sans-serif;">🎂 Souhaitez-vous un Joyeux Anniversaire ! 🎂</h2>
+                    <h2 class="text-xl font-semibold" style="font-family: 'Charme', sans-serif;">🎂 Ajouter un ami pour lui souhaiter un  Joyeux Anniversaire ! 🎂</h2>
                 </div>
             </div>
         </div>
