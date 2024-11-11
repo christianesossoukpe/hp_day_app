@@ -2,6 +2,7 @@
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/vue3';
@@ -22,8 +23,9 @@ const submit = () => {
     <GuestLayout>
 
         <Head title="Log in" />
-
-        <form @submit.prevent="submit">
+        <h2 class="text-2xl font-semibold text-center text-gray-800 dark:text-gray-200 mb-6">Connexion</h2>
+       
+        <form @submit.prevent="submit"  class="w-full max-w-md p-6 bg-white dark:bg-gray-900 bg-opacity-80 rounded-lg shadow-lg">
             <div>
                 <InputLabel for="username" value="Pseudo" />
                 <TextInput id="username" type="text" class="mt-1 block w-full" v-model="form.username" required
