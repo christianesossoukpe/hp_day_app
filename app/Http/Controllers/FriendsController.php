@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class FriendsController extends Controller {
     // fonctions pour recuperer les amis
-
     public function getFriends( $user_id ) {
         // recupere user à travers son id
         $user = User::findOrFail( $user_id );
