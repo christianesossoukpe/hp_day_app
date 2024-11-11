@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Charme';
+    src: url('/fonts/Charme-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Amour';
+    src: url('/fonts/Amour-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chalereux';
+    src: url('/fonts/Chalereux-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Romantique';
+    src: url('/fonts/Romantique-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Charmonman';
+    src: url('/fonts/Charmonman-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Querelle d\'amoureux';
+    src: url('/fonts/Querelle-damoureux-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Aimé par le roi';
+    src: url('/fonts/Aime-par-le-roi-Regular.ttf') format('truetype');
+}

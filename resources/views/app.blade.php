@@ -8,9 +8,11 @@
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Charme&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+        <link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
