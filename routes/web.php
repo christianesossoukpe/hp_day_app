@@ -46,7 +46,7 @@ Route::get('/dashboard', function () {
 
 
 // routes de gestions d'amis
-Route::get('/add-friend', [FriendsController::class, 'index']);
+// Route::get('/add-friend', [FriendsController::class, 'index']);
 
 Route::get('/users/{user_id}/friends', [FriendsController::class, 'getFriends']);//recuperer les amis d'un user donné
 Route::get('/users/{user_id}/suggestions', [FriendsController::class, 'suggestFriends']);//suggestions d'amis

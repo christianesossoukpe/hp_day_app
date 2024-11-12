@@ -31,7 +31,7 @@ const changeTheme = () => {
 
 <template>
 
-    <Head title="Dashboard" />
+    <!-- <Head title="Dashboard" /> -->
 
     <AuthenticatedLayout>
         <template #header>
@@ -202,7 +202,8 @@ const changeTheme = () => {
                                         </li>
                                         <li>
                                             <a href="#"
-                                                class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                                class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200
+                                                 dark:hover:text-white">Delete</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -216,6 +217,7 @@ const changeTheme = () => {
                                 <span class="text-sm text-gray-500 dark:text-gray-400">{{ friend.birthday }}</span>
                                 <div class="flex mt-4 md:mt-6">
                                     <button
+                                    
                                         class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Ajouter</button>
                                 </div>
                             </div>
