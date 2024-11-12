@@ -195,7 +195,7 @@ onMounted(() => {
                     <div class="flex items-center ">
         <!-- Conteneur pour l'animation Lottie -->
         <div id="lottie-animation" class="w-16 h-16 text-2xl font-semibold mb-2"></div>
-        
+
         <!-- Titre -->
         <h2 class="text-2xl font-semibold mb-2" style="font-family: 'LoversQuarrel', sans-serif;">
             Anniversaires du jour
