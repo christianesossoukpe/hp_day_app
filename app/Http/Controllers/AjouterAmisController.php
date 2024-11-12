@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class AjouterAmisController extends Controller
 {
-
+  
     public function index()
     {
+        dd("test");
         // Simuler une liste d'amis
         $ajoutdesamis = [
             ['id' => 1, 'name' => 'Alice'],

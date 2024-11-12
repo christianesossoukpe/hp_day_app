@@ -43,6 +43,7 @@ class FriendsController extends Controller {
         } catch (\Exception $e) {
             return response()->json(['message' => 'Erreur lors de l\'envoi de la demande.', 'error' => $e->getMessage()], 500);
         }
+        
     }
     
 
