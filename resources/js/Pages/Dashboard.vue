@@ -11,7 +11,7 @@ const toggleAside = () => {
 };
 
 const upcomingBirthdays = ref([
-    { id: 1, name: 'David', birthday: '2024-11-25' },
+    { id: 1, name: 'Alain', birthday: '2024-11-25' },
     { id: 2, name: 'Eve', birthday: '2024-12-01' },
 ]);
 
