@@ -16,15 +16,14 @@ onMounted(() => {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/animations/Animation - 1731334077806.json' // URL de votre animation Lottie
+        path: '' // URL de votre animation Lottie
     });
 });
 </script>
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100">
-            
+        <div class="min-h-screen bg-gray-100 relative"> <!-- Ajout de relative ici -->
             <nav class="border-b border-gray-100 bg-white">
                 <!-- Primary Navigation Menu -->
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -33,7 +32,7 @@ onMounted(() => {
                             <!-- Logo -->
                             <div class="flex shrink-0 items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationLogo class="block h-9 w-auto fill-current text-gray-800" />
+                                <ApplicationLogo class="block h-9 w-auto fill-current text-gray-800" />
                                 </Link>
                             </div>
 
@@ -51,10 +50,14 @@ onMounted(() => {
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
-                                            <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none">
+                                            <button type="button"
+                                                class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none">
                                                 {{ $page.props.auth.user.name }}
-                                                <svg class="-me-0.5 ms-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                <svg class="-me-0.5 ms-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd" />
                                                 </svg>
                                             </button>
                                         </span>
@@ -62,7 +65,8 @@ onMounted(() => {
 
                                     <template #content>
                                         <DropdownLink :href="route('profile.edit')">Profile</DropdownLink>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">Log Out</DropdownLink>
+                                        <DropdownLink :href="route('logout')" method="post" as="button">Log Out
+                                        </DropdownLink>
                                     </template>
                                 </Dropdown>
                             </div>
@@ -70,10 +74,17 @@ onMounted(() => {
 
                         <!-- Hamburger -->
                         <div class="-me-2 flex items-center sm:hidden">
-                            <button @click="showingNavigationDropdown = !showingNavigationDropdown" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none">
+                            <button @click="showingNavigationDropdown = !showingNavigationDropdown"
+                                class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none">
                                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path :class="{ hidden: showingNavigationDropdown, 'inline-flex': !showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    <path :class="{ hidden: !showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    <path
+                                        :class="{ hidden: showingNavigationDropdown, 'inline-flex': !showingNavigationDropdown }"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
+                                    <path
+                                        :class="{ hidden: !showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
@@ -81,9 +92,11 @@ onMounted(() => {
                 </div>
 
                 <!-- Responsive Navigation Menu -->
-                <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }" class="sm:hidden">
+                <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
+                    class="sm:hidden">
                     <div class="space-y-1 pb-3 pt-2">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard
+                        </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -95,7 +108,8 @@ onMounted(() => {
 
                         <div class="mt-3 space-y-1">
                             <ResponsiveNavLink :href="route('profile.edit')">Profile</ResponsiveNavLink>
-                            <ResponsiveNavLink :href="route('logout')" method="post" as="button">Log Out</ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('logout')" method="post" as="button">Log Out
+                            </ResponsiveNavLink>
                         </div>
                     </div>
                 </div>
@@ -109,10 +123,18 @@ onMounted(() => {
             </header>
 
             <!-- Page Content -->
-            <main class="relative z-10 bg-cover bg-center" style="background-image: url('/animations/background_tailwind.jpg'); min-height: calc(100vh - 64px);">
-                <div id="lottie" class="absolute inset-0 h-full w-full"></div>
+            <main class="relative z-10 bg-cover bg-center" 
+                style="background-image: url('/animations/macaroons-bg.jpg'); min-height: calc(100vh - 64px);">
+                <div id="lottie" class="absolute inset-0  "></div> <!-- Animation Lottie -->
                 <slot />
             </main>
         </div>
     </div>
 </template>
+
+<style>
+/* Assurez-vous que le conteneur Lottie est sous le contenu principal */
+#lottie {
+    z-index: 0;
+}
+</style>

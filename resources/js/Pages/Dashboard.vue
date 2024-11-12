@@ -25,6 +25,8 @@ const sendEmail = () => {
 const changeTheme = () => {
     document.body.className = selectedTheme.value;
 };
+
+
 </script>
 
 <template>
@@ -37,21 +39,20 @@ const changeTheme = () => {
                 <h2 class="text-xl  font-semibold leading-tight text-gray-800">
                     Dashboard
                 </h2>
-                <a href="/"
-                    class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
+                <a href="/" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
                     Anniversaires du jour
                 </a>
                 <a href="/friends" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
                     Mes Amis
                 </a>
                 <a href="/notifications" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
-                    Notifications
+                    Notifications <!-- Animation Lottie -->
                 </a>
             </div>
         </template>
 
         <div class="py-1">
-            <button  data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar"
+            <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar"
                 aria-controls="separator-sidebar" type="button"
                 class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                 <span class="sr-only">Open sidebar</span>
@@ -66,20 +67,22 @@ const changeTheme = () => {
             <aside id="separator-sidebar"
                 class="fixed top-25 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar">
-                <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+                <div class="h-full px-3 py-4  bg-gray-50 dark:bg-gray-800">
                     <ul class="space-y-2 font-medium">
 
                         <li>
-    <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-            viewBox="0 0 18 18">
-            <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
-        </svg>
-        <span class="flex-1 ms-3 whitespace-nowrap">Anniverssaire à venir</span>
-    </a>
-    <a href="/upcoming-birthdays" class="block mt-2 text-gray-700 dark:text-gray-300">Voir les anniversaires</a>
-</li>
+                            <a href="#"
+                                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 18 18">
+                                    <path
+                                        d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+                                </svg>
+                                <a href="/upcoming-birthdays" class="flex-1 ms-3 whitespace-nowrap">Anniverssaire à
+                                    venir</a>
+                            </a>
+                        </li>
                         <li>
                             <a href="#"
                                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -164,11 +167,12 @@ const changeTheme = () => {
                 </div>
             </aside>
 
-            <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-md p-6">
-                <h1 class="text-3xl font-bold mb-4 text-center" style="font-family: 'Charme', sans-serif;">🎉 
-                    🎉</h1>
+            <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-md p-6 overflow-hidden">
+                <h1 class=" text-3xl font-bold mb-4 text-center animate-slide-left" style="font-family: 'Charme', sans-serif;">
+                    🎉 Bienvenue dans votre Tableau de Bord d'Anniversaire ! 🎉
+                </h1>
 
-                <!-- Section des anniversaires  du jour -->
+                <!-- Section des anniversaires du jour -->
                 <div class="mb-6">
                     <h2 class="text-2xl font-semibold mb-2"></h2>
                     <div class="flex gap-4 justify">
@@ -221,9 +225,11 @@ const changeTheme = () => {
                     </div>
                 </div>
 
-                <!-- Souhaiter un bon anniversaire -->
-                <div class="text-center mt-8">
-                    <h2 class="text-xl font-semibold" style="font-family: 'Charme', sans-serif;">🎂 Ajouter un ami pour lui souhaiter un  Joyeux Anniversaire ! 🎂</h2>
+                <!-- Souhaiter un bon anniversaire avec animation -->
+                <div class="text-center mt-8 relative overflow-hidden">
+                    <h2 class="text-xl font-semibold animate-slide" style="font-family: 'Charme', sans-serif;">
+                        🎂 Souhaitez-vous un Joyeux Anniversaire ! 🎂
+                    </h2>
                 </div>
             </div>
         </div>
@@ -233,8 +239,44 @@ const changeTheme = () => {
 <style scoped>
 @font-face {
     font-family: 'Charme';
-    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); 
+    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype');
+    /* Assurez-vous que le chemin est correct */
     font-weight: normal;
     font-style: normal;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+@keyframes slide-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-slide {
+    animation: slide 20s linear infinite;
+    /* Changez la durée selon vos préférences */
+}
+.animate-slide-left {
+    animation: slide-left 20s linear infinite; /* Durée de l'animation pour le titre */
+}
+
+.relative {
+    position: relative;
+    /* Position relative pour le conteneur de l'animation */
 }
 </style>
