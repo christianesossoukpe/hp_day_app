@@ -234,7 +234,7 @@ const changeTheme = () => {
 <style scoped>
 @font-face {
     font-family: 'Charme';
-    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); / Assurez-vous que le chemin est correct /
     font-weight: normal;
     font-style: normal;
 }

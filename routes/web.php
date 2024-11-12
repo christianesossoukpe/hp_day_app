@@ -27,6 +27,7 @@ Route::get('/login', function () {
     return Inertia::render('Auth/Login');
 })->middleware('guest')->name('login'); // Protéger la route de connexion
 
+
 // route user 
 // Route::get('/users',[UserController::class,'getAllUsers']);
 Route::get('/users/{id}',[UserController::class,'getUserById']);
@@ -36,12 +37,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+
+
+
+
+
+
+
+
 // routes de gestions d'amis
+Route::post('/add-friend', [FriendsController::class, 'sendFriendRequest']);
+
 Route::get('/users/{user_id}/friends', [FriendsController::class, 'getFriends']);//recuperer les amis d'un user donné
 Route::get('/users/{user_id}/suggestions', [FriendsController::class, 'suggestFriends']);//suggestions d'amis
-Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'searchFriends']);//recherch damis specifique
-// Route::post('/users/friends', function(){ return  response()->json("jsglkjklsg");});//envoi de demande d'amitié
-Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'sendFriendRequest']);
+Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'searchFriends']);
+Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'sendFriendRequest'])->name('sendFriendRequest');
+// Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'sendFriendRequest']);
 Route::get('/users/{user_id}/friends/{friend_id}/accept', [FriendsController::class, 'acceptFriendRequest']); // Accepter une demande d'amitié
 
 Route::middleware('auth')->group(function () {
@@ -53,8 +64,8 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/ajoutdesamis', [AjouterAmisController::class, 'index'])->name('ajoutdesamis');
-Route::get('/friends', [FriendsController::class, 'index'])->name('friends');
+// Route::get('/ajoutdesamis', [AjouterAmisController::class, 'index'])->name('ajoutdesamis');
+// Route::get('/friends', [FriendsController::class, 'index'])->name('friends');
 Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications');
 Route::get('/upcoming-birthdays', [BirthdaysController::class, 'index'])->name('upcoming.birthdays');
 

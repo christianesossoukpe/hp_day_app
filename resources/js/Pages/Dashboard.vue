@@ -1,8 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import { ref, onMounted } from 'vue';
-import lottie from 'lottie-web';
+import { ref } from 'vue';
 // État pour gérer l'ouverture/fermeture de l'aside
 const isAsideOpen = ref(false);
 
@@ -26,24 +25,6 @@ const sendEmail = () => {
 const changeTheme = () => {
     document.body.className = selectedTheme.value;
 };
-
-
-const fonts = [
-    "'Charme', sans-serif",
-    "'Dancing Script', cursive",
-    "'Pacifico', cursive",
-    "'Lobster', cursive",
-    "'Poppins', sans-serif",
-];
-
-const currentFont = ref(fonts[1]);
-
-onMounted(() => {
-    setInterval(() => {
-        const nextIndex = (fonts.indexOf(currentFont.value) + 1) % fonts.length;
-        currentFont.value = fonts[nextIndex];
-    }, 45000); // Change de police toutes les 45 secondes
-});
 </script>
 
 <template>
@@ -64,7 +45,7 @@ onMounted(() => {
                     Mes Amis
                 </a>
                 <a href="/notifications" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
-                    Notifications  <!-- Animation Lottie -->
+                    Notifications
                 </a>
             </div>
         </template>
@@ -89,17 +70,16 @@ onMounted(() => {
                     <ul class="space-y-2 font-medium">
 
                         <li>
-                            <a href="#"
-                                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    viewBox="0 0 18 18">
-                                    <path
-                                        d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
-                                </svg>
-                                <a href="/upcoming-birthdays" class="flex-1 ms-3 whitespace-nowrap">Anniverssaire à venir</a>
-                            </a>
-                        </li>
+    <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 18 18">
+            <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+        </svg>
+        <span class="flex-1 ms-3 whitespace-nowrap">Anniverssaire à venir</span>
+    </a>
+    <a href="/upcoming-birthdays" class="block mt-2 text-gray-700 dark:text-gray-300">Voir les anniversaires</a>
+</li>
                         <li>
                             <a href="#"
                                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -115,7 +95,7 @@ onMounted(() => {
                             </a>
                         </li>
                         <li>
-                            <a href="/ajoutdesamis"
+                            <a href="/add-friend"
                                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -141,6 +121,8 @@ onMounted(() => {
 
                     </ul>
                     <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
+
+
 
                         <li>
                             <a href="#"
@@ -183,13 +165,12 @@ onMounted(() => {
             </aside>
 
             <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-md p-6">
-                <h1 :class="currentFont" class="text-3xl font-bold mb-4 text-center animate-slide animate-blink" style="transition: font-family 0.5s;">
-            🎉 Bienvenue dans votre Tableau de Bord d'Anniversaire ! 🎉
-        </h1>
+                <h1 class="text-3xl font-bold mb-4 text-center" style="font-family: 'Charme', sans-serif;">🎉 
+                    🎉</h1>
 
                 <!-- Section des anniversaires  du jour -->
                 <div class="mb-6">
-                    <h2 class="text-2xl font-semibold mb-2">Anniversaires du jour</h2>
+                    <h2 class="text-2xl font-semibold mb-2"></h2>
                     <div class="flex gap-4 justify">
                         <div v-for="friend in upcomingBirthdays" :key="friend.id"
                             class="w-[200px] pt-0 max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -224,8 +205,6 @@ onMounted(() => {
                                     </ul>
                                 </div>
                             </div>
-
-               
                             <div class="flex flex-col items-center p-4">
                                 <img class="w-20 h-20 mb-3 rounded-full shadow-lg"
                                     src="/docs/images/people/profile-picture-3.jpg"
@@ -235,7 +214,7 @@ onMounted(() => {
                                 <span class="text-sm text-gray-500 dark:text-gray-400">{{ friend.birthday }}</span>
                                 <div class="flex mt-4 md:mt-6">
                                     <button
-                                        class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Souhaiter</button>
+                                        class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Ajouter</button>
                                 </div>
                             </div>
                         </div>
@@ -244,7 +223,7 @@ onMounted(() => {
 
                 <!-- Souhaiter un bon anniversaire -->
                 <div class="text-center mt-8">
-                    <h2 class="text-xl font-semibold" style="font-family: 'Charme', sans-serif;">🎂 Souhaitez-vous un Joyeux Anniversaire ! 🎂</h2>
+                    <h2 class="text-xl font-semibold" style="font-family: 'Charme', sans-serif;">🎂 Ajouter un ami pour lui souhaiter un  Joyeux Anniversaire ! 🎂</h2>
                 </div>
             </div>
         </div>
@@ -254,37 +233,8 @@ onMounted(() => {
 <style scoped>
 @font-face {
     font-family: 'Charme';
-    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
-/* @keyframes slide {
-    0% {
-        transform: translateX(100%);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-}
-
-.animate-slide {
-    animation: slide 5s linear infinite;
-}
-
-.animate-blink {
-    animation: blink 1s step-start infinite;
-} */
 </style>

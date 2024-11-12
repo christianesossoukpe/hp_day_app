@@ -28,12 +28,13 @@ class FriendsController extends Controller {
             $user = User::findOrFail($user_id);
     
             if ($user->friends()->where('friend_id', $friend_id)->exists()) {
-                return response()->json(['message' => 'Vous êtes déjà amis.'], 400);
+                return response()->json(['error' => 'Vous êtes déjà amis.'], 400);
             }
     
             $user->friends()->attach($friend_id, ['status' => 'pending']);
     
-            return response()->json(['message' => 'Demande envoyée avec succès.']);
+            // Retourner une réponse JSON pour informer le frontend
+            return response()->json(['success' => 'Demande envoyée avec succès.'], 200);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Erreur lors de l\'envoi de la demande.', 'error' => $e->getMessage()], 500);
         }

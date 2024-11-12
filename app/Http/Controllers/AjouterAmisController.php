@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class AjouterAmisController extends Controller
 {
+
     public function index()
     {
         // Simuler une liste d'amis

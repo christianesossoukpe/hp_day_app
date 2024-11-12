@@ -96,7 +96,7 @@ const changeTheme = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="/ajoutdesamis"
+                            <a href="#"
                                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -166,12 +166,12 @@ const changeTheme = () => {
             </aside>
 
             <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-md p-6">
-                <h1 class="text-3xl font-bold mb-4 text-center" style="font-family: 'Charme', sans-serif;">🎉 Bienvenue (s) sur  la liste de vos amis (e) !
+                <h1 class="text-3xl font-bold mb-4 text-center" style="font-family: 'Charme', sans-serif;">🎉 
                     🎉</h1>
 
                 <!-- Section des anniversaires  du jour -->
                 <div class="mb-6">
-                    <h2 class="text-2xl font-semibold mb-2">Mes amis</h2>
+                    <h2 class="text-2xl font-semibold mb-2"></h2>
                     <div class="flex gap-4 justify">
                         <div v-for="friend in upcomingBirthdays" :key="friend.id"
                             class="w-[200px] pt-0 max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -234,7 +234,7 @@ const changeTheme = () => {
 <style scoped>
 @font-face {
     font-family: 'Charme';
-    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); /* Assurez-vous que le chemin est correct */
+    src: url('./fonts/Charm-Regular.ttf.ttf') format('truetype'); / Assurez-vous que le chemin est correct /
     font-weight: normal;
     font-style: normal;
 }
