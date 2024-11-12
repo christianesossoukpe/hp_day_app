@@ -17,8 +17,6 @@ class AjouterAmisController extends Controller
         ];
 
         // Retourner la vue avec la liste des amis
-        return inertia('AjoutsDesAmis', [
-            'ajoutdesamis' => $ajoutdesamis,
-        ]);
+        return inertia('AjoutsDesAmis');
     }
 }

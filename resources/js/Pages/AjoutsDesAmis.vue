@@ -41,7 +41,7 @@ const changeTheme = () => {
                     class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
                     Anniversaires du jour
                 </a>
-                <a href="/friends" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
+                <a href="/add-friend" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">
                     Mes Amis
                 </a>
                 <a href="/notifications" class="text-xl font-semibold leading-tight text-gray-800 hover:text-blue-500">

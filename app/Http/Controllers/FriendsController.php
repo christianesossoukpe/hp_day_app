@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class FriendsController extends Controller {
+
+    public function index()
+    {
+        return view('AddFriend'); // Retourne la vue AddFriend
+    }
     // fonctions pour recuperer les amis
     public function getFriends( $user_id ) {
         // recupere user à travers son id
