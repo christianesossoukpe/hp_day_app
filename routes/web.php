@@ -30,7 +30,7 @@ Route::get('/login', function () {
 
 // route user 
 // Route::get('/users',[UserController::class,'getAllUsers']);
-Route::get('/users/{id}',[UserController::class,'getUserById']);
+// Route::get('/users/{id}',[UserController::class,'getUserById']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -48,12 +48,12 @@ Route::get('/dashboard', function () {
 // routes de gestions d'amis
 // Route::get('/add-friend', [FriendsController::class, 'index']);
 
-Route::get('/users/{user_id}/friends', [FriendsController::class, 'getFriends']);//recuperer les amis d'un user donné
-Route::get('/users/{user_id}/suggestions', [FriendsController::class, 'suggestFriends']);//suggestions d'amis
-Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'searchFriends']);
-Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'sendFriendRequest'])->name('sendFriendRequest');
+// Route::get('/users/{user_id}/friends', [FriendsController::class, 'getFriends']);
+// Route::get('/users/{user_id}/suggestions', [FriendsController::class, 'suggestFriends']);
+// Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'searchFriends']);
+// Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'sendFriendRequest'])->name('sendFriendRequest');
 // Route::get('/users/{user_id}/friends/{friend_id}', [FriendsController::class, 'sendFriendRequest']);
-Route::get('/users/{user_id}/friends/{friend_id}/accept', [FriendsController::class, 'acceptFriendRequest']); // Accepter une demande d'amitié
+// Route::get('/users/{user_id}/friends/{friend_id}/accept', [FriendsController::class, 'acceptFriendRequest']); 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
